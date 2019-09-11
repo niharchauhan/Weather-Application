@@ -20,7 +20,8 @@ weatherForm.addEventListener('submit', (e) => {          // EventListener - firs
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {      //fetch allows to fetch data from the url
+    //fetch('http://localhost:3000/weather?address=' + location).then((response) => {  //only for local machine access    //fetch allows to fetch data from the url
+    fetch('/weather?address=' + location).then((response) => {          //for heroku access
     response.json().then((data) => {
         if(data.error)
         {
